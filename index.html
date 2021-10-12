@@ -23,17 +23,7 @@
     <link rel="icon" type="image/png" href="favicon-32x32.png">
 
     <link rel="stylesheet" type="text/css" href="/style.css">
-   <script>(function () {
-       
-    if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.setAttribute("data-theme", "dark");
-        return;
-    } else if (localStorage.getItem('theme') === 'light') {
-        document.documentElement.setAttribute("data-theme", "light");
-    } 
- })();</script>
-    
-    <title>Calculator"</title>
+    <title>Calculator</title>
 </head>
 
 <body>
@@ -53,7 +43,7 @@
                     <input type="radio" id="switch2" name="switch" value="2">
                     <label for="switch2" onchange="toggleTheme();"></label>
                     <input type="radio" id="switch3" name="switch" value="3">
-                    <label for="switch3" onchange="toggleTheme();" ></label>
+                    <label for="switch3" onchange="toggleTheme();"></label>
                     <span></span>
                 </div>
             </div>
@@ -92,5 +82,5 @@
     </div>
     <script src="main.js"></script>
 </body>
-</html>
 
+</html>
