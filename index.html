@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="author" content="Violeta Petrović">
+    <meta name="description" content="Calculator with multiple toggle switch">
+    <meta name="keywords" content="html, css, javascript, responsive">
+
+    <!-- IOS compatibility -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Calculator">
+    <link rel="apple-touch-icon" type="image/png" href="apple-icon-144x144.png">
+
+    <!--Android compatibility-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="aplication-name" content="Calculator">
+    <link rel="icon" type="image/png" href="android-icon-192x192.png">
+
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+   <script>(function () {
+       
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute("data-theme", "dark");
+        return;
+    } else if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.setAttribute("data-theme", "light");
+    } 
+ })();</script>
+    
+    <title>Calculator"</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p>calc</p>
+            <div class="switch-wrapper">
+                <p>theme</p>
+                <div class="multiswitch" id="multiswitch">
+                    <p>
+                        <small>1</small>
+                        <small>2</small>
+                        <small>3</small>
+                    </p>
+                    <input type="radio" id="switch1" checked name="switch" value="1">
+                    <label for="switch1" onchange="toggleTheme();"></label>
+                    <input type="radio" id="switch2" name="switch" value="2">
+                    <label for="switch2" onchange="toggleTheme();"></label>
+                    <input type="radio" id="switch3" name="switch" value="3">
+                    <label for="switch3" onchange="toggleTheme();" ></label>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <input type="text" placeholder="0" value="" id="unos" disabled="" style="text-align: right">
+        <div class="wrapper">
+            <div>
+                <button onclick="onClick(7);">7</button>
+                <button onclick="onClick(8);">8</button>
+                <button onclick="onClick(9);">9</button>
+                <button onclick="clearLastInput();" class="different">DEL</button>
+            </div>
+            <div>
+                <button onclick="onClick(4);">4</button>
+                <button onclick="onClick(5);">5</button>
+                <button onclick="onClick(6);">6</button>
+                <button onclick="onClick('+');">+</button>
+            </div>
+            <div>
+                <button onclick="onClick(1);">1</button>
+                <button onclick="onClick(2);">2</button>
+                <button onclick="onClick(3);">3</button>
+                <button onclick="onClick('-');">-</button>
+            </div>
+            <div>
+                <button onclick="onClick('.');">.</button>
+                <button onclick="onClick(0);">0</button>
+                <button onclick="onClick('/');">/</button>
+                <button onclick="onClick('*');">x</button>
+            </div>
+            <div>
+                <button class="long different" onclick="setInputValue('');">RESET</button>
+                <button onclick="calculateValue();" class="long equal">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
+
