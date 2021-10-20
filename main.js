@@ -26,10 +26,16 @@ function onClick(value) {
 function calculateValue() {
   let stariUnos = getInputValue();
   if (stariUnos !== "") {
-    let unos = eval(stariUnos);
+    let unos = parseString(stariUnos);
     setInputValue(unos);
   }
 }
+
+// eval() alternative
+function parseString(str) {
+  return Function(`'use strict'; return (${str})`)();
+}
+
 function clearLastInput() {
   let stariUnos = getInputValue();
   let unos = stariUnos.substr(0, stariUnos.length - 1);
